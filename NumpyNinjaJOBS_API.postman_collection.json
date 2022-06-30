@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "738e6552-5e4f-43c1-a064-032ad436f7af",
+		"name": "NumpyNinjaJOBS_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"SDET\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post request with existing Job Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs?Job%20Id=\"1050\"&Job%20Title=\"SDET59\"&Job%20Location=\"Atlanta GA\"&Job Company Name=\"LnT\"&Job Type=\"Permanent\"&Job Posted time=\"15minutes\"&Job Description=\"Selenium Automation QA \"",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					],
+					"query": [
+						{
+							"key": "Job%20Id",
+							"value": "\"1050\""
+						},
+						{
+							"key": "Job%20Title",
+							"value": "\"SDET59\""
+						},
+						{
+							"key": "Job%20Location",
+							"value": "\"Atlanta GA\""
+						},
+						{
+							"key": "Job Company Name",
+							"value": "\"LnT\""
+						},
+						{
+							"key": "Job Type",
+							"value": "\"Permanent\""
+						},
+						{
+							"key": "Job Posted time",
+							"value": "\"15minutes\""
+						},
+						{
+							"key": "Job Description",
+							"value": "\"Selenium Automation QA \""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request with params",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs?Job%20Id=\"1004\"&Job%20Title=\"SDET\"&Job%20Location=\"NC\"&Job Company Name=\"ABC\"&Job Type=\"Temp\"&Job Posted time=\"20minutes\"&Job Description=\"QA Tester\"",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					],
+					"query": [
+						{
+							"key": "Job%20Id",
+							"value": "\"1004\""
+						},
+						{
+							"key": "Job%20Title",
+							"value": "\"SDET\""
+						},
+						{
+							"key": "Job%20Location",
+							"value": "\"NC\""
+						},
+						{
+							"key": "Job Company Name",
+							"value": "\"ABC\""
+						},
+						{
+							"key": "Job Type",
+							"value": "\"Temp\""
+						},
+						{
+							"key": "Job Posted time",
+							"value": "\"20minutes\""
+						},
+						{
+							"key": "Job Description",
+							"value": "\"QA Tester\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put request with Job Tiltle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs?Job%20Id=\"1050\"&Job%20Title=\"QATester\"",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					],
+					"query": [
+						{
+							"key": "Job%20Id",
+							"value": "\"1050\""
+						},
+						{
+							"key": "Job%20Title",
+							"value": "\"QATester\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put request with non exiting job Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs?Job%20Id=\"1060\"&Job%20Title=\"SDET57\"",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					],
+					"query": [
+						{
+							"key": "Job%20Id",
+							"value": "\"1060\""
+						},
+						{
+							"key": "Job%20Title",
+							"value": "\"SDET57\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE request for existing and Non Existing Job Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jobs123.herokuapp.com/Jobs?Job%20Id=1011",
+					"protocol": "https",
+					"host": [
+						"jobs123",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"Jobs"
+					],
+					"query": [
+						{
+							"key": "Job%20Id",
+							"value": "1011"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
